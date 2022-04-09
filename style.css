@@ -1,0 +1,445 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Quicksand, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+/*  Nav Bar CSS  */ 
+
+nav {
+    background-color: black;
+    color: white;
+    padding: 20px 50px;
+}
+
+.active {
+    text-decoration: underline;
+}
+
+.logoImg {
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.logoImg:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.navTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.seach {
+    display: flex;
+    align-items: center;
+    background-color: gray;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.searchInput {
+    border: none;
+    background-color: transparent;
+}
+
+.searchInput::placeholder {
+    color: lightgray;
+}
+
+.subPages {
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.navBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menuItem {
+    margin-right: 50px;
+    cursor: pointer;
+    color: lightgray;
+    font-weight: 400;
+}
+
+/* Attempt at hover animation for bottom navBar */
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: white;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: center;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: center;
+  }
+
+/* END Nav Bar CSS  
+___________________________________ */ 
+
+
+
+/* Initial switch/slider */
+
+/* Testing background with clip-path for first area*/ 
+
+.slider {
+    background-image: url("./img/fondo.jpg");
+    clip-path: polygon(0 0, 100% 0%, 97% 95%, 0% 100%);
+    overflow: hidden;
+}
+
+
+
+.sliderWrapper {
+    display: flex;
+    width: 500vw;
+    transition: all 1s ease-in-out;
+}
+
+.sliderImg {
+    height: 500px;
+    width: 750px;
+    border-radius: 50%;
+    z-index: 1;
+    margin: 20px;
+}
+
+.sliderItem {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.sliderBg {
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.sliderTitle {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.sliderPrice {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: 60px;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+    padding: 5px;
+    border: 1px solid gray;
+    z-index: 1;
+}
+
+.buyButton {
+    position: absolute;
+    top: 75%;
+    right: 15%;
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    border: 1px solid gray;
+    z-index: 1;
+    cursor: pointer;
+    background-color: black;
+}
+
+.buyButton:hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* Handle background colors for items */
+
+.sliderItem:nth-child(1).sliderBg{
+    background-color: green;
+}
+
+.sliderItem:nth-child(2).sliderBg{
+    background-color: rebeccapurple;
+}
+
+.sliderItem:nth-child(3).sliderBg{
+    background-color: teal;
+}
+
+.sliderItem:nth-child(4).sliderBg{
+    background-color: cornflowerblue;
+}
+
+
+/* Handle price colors for items */
+
+.sliderItem:nth-child(1).sliderPrice{
+    background-color: green;
+}
+
+.sliderItem:nth-child(2).sliderPrice{
+    background-color: white;
+}
+
+.sliderItem:nth-child(3).sliderPrice{
+    background-color: teal;
+}
+
+.sliderItem:nth-child(4).sliderPrice{
+    background-color: cornflowerblue;
+}
+
+/* Features Coding */
+
+.features {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+
+.featureIcon {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 25%;
+}
+
+
+.feature{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.featureTitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px;
+}
+
+.featureDescription {
+    color: gray;
+    width: 75%;
+    height: 100px;
+}
+
+/* Products, Memberships and payment  */
+
+
+.product{
+    height: 100vh;
+    background-color: whitesmoke;
+    position: relative;
+    clip-path: polygon(3% 3%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Buy Button to open card information */ 
+
+.payButton {
+    position: absolute;
+    height: 40px;
+    bottom: -40px;
+    width: 100%;
+    left: 0;
+    -webkit-box-shadow: 10px 11px 7px 5px rgba(0,0,0,0.78); 
+    box-shadow: 10px 11px 7px 5px rgba(0,0,0,0.78);
+    background-color: #369e62;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.close {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: gray;
+    color: white;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2px;
+  }
+  
+/* Testing product images sizes with width 50% */
+
+.productImg {
+    height: 500px;
+    width: 750px;
+    border-radius: 20%;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+.productDetails {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    width: 40%;
+    padding: 50px;
+    margin-right: 100px;
+}
+
+.productTitle {
+    font-size: 75px;
+    font-weight: 900;
+}
+
+.productDescription {
+    font-style: 24px;
+    color: gray;
+}
+
+.colors, .memberships {
+    display: flex;
+}
+
+.color {
+    padding: 5px 20px;
+    border: 1px solid black;
+    margin: 20px 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.color:hover{
+    background-color: black;
+    color: white;
+}
+
+.membership {
+    padding: 5px 20px;
+}
+
+.productButton {
+    float: right;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.productButton:hover {
+    background-color: white;
+    color: black;
+    transition: transform 0.5s ease-out;
+}
+
+footer {
+    display: flex;
+ }
+
+ footer a {
+     text-decoration: none;
+ }
+
+.footerLeft {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    margin-left: 50px;
+}
+
+.fMenuTitle {
+    font-size: 16px;
+}
+
+.fList {
+    padding: 0;
+    list-style: none;
+}
+
+.fListItem {
+    margin-bottom: 10px;
+    color: gray;
+    cursor: pointer;
+}
+
+.footerRight {
+    float: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footerRightMenu {
+    margin: 10px;
+}
+
+.fInput {
+    padding: 5px;
+}
+
+.fButton {
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
+
+.fIcons {
+    display: flex;
+}
+
+.fIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.fIcon:hover {
+    transform: scale(1.25);
+    transition: 0.5s;
+}
+
+.copyright {
+    font-weight: 300;
+    font-size: 14px;
+    
+}
