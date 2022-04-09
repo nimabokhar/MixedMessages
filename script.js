@@ -1,5 +1,5 @@
 const generateDadJokes = function (array) {
-  return array[Math.floor(Math.random() * array.length)];
+  return array[Math.floor(Math.random() * array.length - 1)];
 };
 const dadJokes = [
   `Why does Superman get invited to dinners? Because he is a Supperhero.`,
