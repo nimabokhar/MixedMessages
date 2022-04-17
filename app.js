@@ -3,15 +3,15 @@ const wrapper = document.querySelector(".sliderWrapper")
 const menuItems = document.querySelectorAll(".menuItem")
 
 
-// Products Array 
+// Products/Mixed Messages Array 
 const products = [
     {
         id: 1,
         title: "Dad Jokes",
         price: "Random Dad Joke Generator",
+        description: "This creates a new random Dad Joke from our top quality selection",
         colors: [
           {
-            code: "Website Only", // I have no idea what this is
             img: "./img/dadjokes1.jpg",
           },
         ],
@@ -20,9 +20,9 @@ const products = [
       id: 2,
       title: "Pick Up Lines",
       price: "Random Pick Up Line Generator",
+      description: "This creates a new random Puck Up Line from our top quality selection",
       colors: [
         {
-          code: "Website Only", // I have no idea what this is
           img: "./img/pickupLines1.png",
         },
       ],
@@ -32,9 +32,9 @@ const products = [
       id: 3,
       title: "Puns",
       price: "Random Puns Generator",
+      description: "This creates a new random Pun from our top quality selection",
       colors: [
         {
-          code: "Website Only", // I have no idea what this is
           img: "./img/puns1.jpg",
         },
       ],
@@ -44,9 +44,9 @@ const products = [
       id: 4,
       title: "Movie Quotes",
       price: "Random Movie Quotes Generator",
+      description: "This creates a new random Movie Quote from our top quality selection",
       colors: [
         {
-          code: "Website Only", // I have no idea what this is
           img: "./img/movieQuotes1.jpg",
         },
       ],
@@ -54,22 +54,31 @@ const products = [
     
   ];
 
-// Choosing the product
+
+
+// Choosing the Product/Mixed Message Type
 
 let chosenProduct = products[0]
 
 const currentProductImg = document.querySelector(".productImg")
 const currentProductTitle = document.querySelector(".productTitle")
 const currentProductPrice = document.querySelector(".productPrice")
-const currentProductColor = document.querySelectorAll(".color")
-const currentProductMembership = document.querySelectorAll(".membership")
 
-// First section animation
+
+
+// Important __________________________________________________________________
+
+// Change the text for a description and then to the generated Mixed Message
+const currentProductDescription = document.querySelector(".productDescription")
+
+// ____________________________________________________________________________
+
+// First section animation AKA Mixed Message Section
 
 menuItems.forEach((item, index) => {
     item.addEventListener("click", () => {
 
-        // Change the currend slide
+        // Change the current slide
         wrapper.style.transform= `translateX(${-100 * index}vw)`;
 
         // Change the chosen product
@@ -80,35 +89,21 @@ menuItems.forEach((item, index) => {
         currentProductPrice.textContent = chosenProduct.price;
         currentProductImg.src = chosenProduct.colors[0].img;
 
-        // Assign Self or Host
-        currentProductColor.forEach((color,index)=>{
-            color.style.backgroundColor = chosenProduct.colors[index].code;
+        // IMPORTANT Change ProductDescripton/Mixed Message
+        currentProductDescription.textContent = chosenProduct.description;
 
-        });
     });
 });
 
-// Switch image for Web only/Hosting
+// ____________________________________________________________________________
+
+
+
+// Switch image for Type of Messages
 currentProductColor.forEach((color, index)=>{
     color.addEventListener("click", ()=>{
         currentProductImg.src = chosenProduct.colors[index].img;
     });
 });
 
-// Membership selection
-currentProductMembership.forEach((membership, index) => {
-
-    membership.addEventListener("click", () => {
-
-        currentProductMembership.forEach((membership) => {
-
-            membership.style.color = "white"
-            membership.style.color = "black"
-
-        })
-
-        membership.style.color = "black"
-        membership.style.color = "white"
-    })
-})
 

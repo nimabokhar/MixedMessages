@@ -37,21 +37,6 @@ nav {
     align-items: center;
     justify-content: space-between;
 }
-.seach {
-    display: flex;
-    align-items: center;
-    background-color: gray;
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-.searchInput {
-    border: none;
-    background-color: transparent;
-}
-
-.searchInput::placeholder {
-    color: lightgray;
-}
 
 .subPages {
     font-size: 20px;
@@ -108,12 +93,11 @@ ___________________________________ */
 /* Testing background with clip-path for first area*/ 
 
 .slider {
+    height: 800px;
     background-image: url("./img/fondo.jpg");
     clip-path: polygon(0 0, 100% 0%, 97% 95%, 0% 100%);
     overflow: hidden;
 }
-
-
 
 .sliderWrapper {
     display: flex;
@@ -224,84 +208,16 @@ ___________________________________ */
     background-color: cornflowerblue;
 }
 
-/* Features Coding */
-
-.features {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 50px;
-}
 
 
-.featureIcon {
-    width: 50px;
-    height: 50px;
-    background-color: black;
-    border-radius: 25%;
-}
+/* Products/Mixed Messages Section  */
 
-
-.feature{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-}
-
-.featureTitle {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 20px;
-}
-
-.featureDescription {
-    color: gray;
-    width: 75%;
-    height: 100px;
-}
-
-/* Products, Memberships and payment  */
-
-
-.product{
-    height: 100vh;
+.product {
+    height: 700px;
     background-color: whitesmoke;
     position: relative;
     clip-path: polygon(3% 3%, 100% 0%, 100% 100%, 0% 100%);
 }
-
-/* Buy Button to open card information */ 
-
-.payButton {
-    position: absolute;
-    height: 40px;
-    bottom: -40px;
-    width: 100%;
-    left: 0;
-    -webkit-box-shadow: 10px 11px 7px 5px rgba(0,0,0,0.78); 
-    box-shadow: 10px 11px 7px 5px rgba(0,0,0,0.78);
-    background-color: #369e62;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.close {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    background-color: gray;
-    color: white;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 2px;
-  }
   
 /* Testing product images sizes with width 50% */
 
@@ -327,30 +243,13 @@ ___________________________________ */
     font-weight: 900;
 }
 
+.productPrice {
+    font-size: 30px;
+}
+
 .productDescription {
-    font-style: 24px;
+    font-size: 24px;
     color: gray;
-}
-
-.colors, .memberships {
-    display: flex;
-}
-
-.color {
-    padding: 5px 20px;
-    border: 1px solid black;
-    margin: 20px 10px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.color:hover{
-    background-color: black;
-    color: white;
-}
-
-.membership {
-    padding: 5px 20px;
 }
 
 .productButton {
@@ -368,6 +267,8 @@ ___________________________________ */
     color: black;
     transition: transform 0.5s ease-out;
 }
+
+
 
 footer {
     display: flex;
@@ -442,4 +343,214 @@ footer {
     font-weight: 300;
     font-size: 14px;
     
+}
+
+
+
+/* Making it Responsive */
+
+
+/* Responsive to smaller screens */
+
+@media  screen and (max-width: 1440px) {
+
+    .sliderImg {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 90%;
+        margin: 1%;
+    }
+
+    .sliderBg {
+        width: 100%;
+        height: 100%;
+        align-items: none;
+        position: relative;
+    }
+
+    .sliderTitle {
+        margin: 0;
+        display: flex;
+        font-size: 45px;
+    }
+
+    .sliderPrice {
+        top: unset;
+        bottom: 0;
+        left: 0;
+        background-color: lightgray;
+    }
+
+    .buyButton {
+        top: 65%;
+        right: 10%;
+    }
+
+    .product {
+        min-height: 1000px;
+        clip-path: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        text-align: center;
+    }
+
+    .productImg {
+        margin: 3%;
+        width: 50%;
+        height: 40%;
+    }
+
+    .productDetails {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: 0;
+        margin: 0px;
+    }
+
+    .productButton {
+        margin-bottom: 10px;
+    }
+}
+
+    /* Responsive to Phones */
+
+@media  screen and (max-width: 480px) {
+
+    nav {
+            padding: 20px;
+    
+    }
+
+    .subPages {
+        display: none;
+    }
+
+    .navBottom {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menuItem {
+        margin: 20px;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .contactLogo {
+        width: 90%;
+        height: 90%;
+    }
+
+
+
+    .slider {
+        clip-path: none;
+        height: 100%;
+    }
+
+    .sliderImg {
+        width: 100%;
+        height: 50%;
+    }
+
+    .sliderBg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .sliderTitle {
+        display: none;
+    }
+
+    .sliderPrice {
+        top: unset;
+        bottom: 0;
+        left: 0;
+        background-color: lightgray;
+    }
+
+
+
+    
+    .product {
+        min-height: 500px;
+        clip-path: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 5%;
+        text-align: center;
+    }
+
+    .productImg {
+        margin: 5%;
+        width: 80%;
+        height: 30%;
+    }
+
+    .productDetails {
+        width: 100%;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        top: 0;
+        margin: 0px;
+    }
+
+    .productDescription {
+        text-align: justify;
+        margin: 5%;
+    }
+
+    .productTitle {
+        font-size: 50px;
+        margin: 0;
+    }
+
+    .productButton {
+        margin: 5%;
+    }
+
+
+
+    
+    footer {
+        flex-wrap: wrap;
+        align-content: space-around;
+        position: relative;
+    }
+
+    .fListItem {
+        margin: 20px;
+    }
+
+    .footerLeft {
+        margin: 5%;
+        padding: 0;
+        display: inline;
+
+    }
+
+    .footerRight{
+        flex-direction: column;
+        align-items: center;
+        align-content: flex-end;
+    }
+
+    .fIcon {
+        width: 30px;
+        height: 30px;
+        margin: 15px;
+    }
+
 }
