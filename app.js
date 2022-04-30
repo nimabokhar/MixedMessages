@@ -97,13 +97,3 @@ menuItems.forEach((item, index) => {
 
 // ____________________________________________________________________________
 
-
-
-// Switch image for Type of Messages
-currentProductColor.forEach((color, index)=>{
-    color.addEventListener("click", ()=>{
-        currentProductImg.src = chosenProduct.colors[index].img;
-    });
-});
-
-
